@@ -1,0 +1,471 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  --card-bg: 255, 255, 255;
+  --card-border: 229, 231, 235;
+  --heading-color: 17, 24, 39;
+  --text-color: 31, 41, 55;
+  --link-color: 29, 78, 216;
+  --link-hover: 30, 64, 175;
+  --accent-color: 37, 99, 235;
+  --accent-light: 219, 234, 254;
+  --button-text: 255, 255, 255;
+  --nav-text: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 229, 231, 235;
+  --background-rgb: 15, 23, 42;
+  --card-bg: 30, 41, 59;
+  --card-border: 51, 65, 85;
+  --heading-color: 243, 244, 246;
+  --text-color: 209, 213, 219;
+  --link-color: 96, 165, 250;
+  --link-hover: 147, 197, 253;
+  --accent-color: 59, 130, 246;
+  --accent-light: 30, 58, 138;
+  --button-text: 255, 255, 255;
+  --nav-text: 255, 255, 255;
+}
+
+/* Paramètres de base pour meilleure lisibilité */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* Amélioration du focus pour l'accessibilité */
+*:focus-visible {
+  outline: 2px solid rgb(var(--accent-color));
+  outline-offset: 2px;
+}
+
+/* Styles pour les cartes */
+.card {
+  background-color: rgb(var(--card-bg));
+  border-color: rgb(var(--card-border));
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Styles pour les titres */
+h1, h2, h3, h4, h5, h6 {
+  color: rgb(var(--heading-color));
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Styles pour le texte */
+p, li, span, div {
+  color: rgb(var(--text-color));
+}
+
+/* Optimisation des liens pour l'accessibilité */
+a:not(.btn) {
+  color: rgb(var(--link-color));
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover:not(.btn) {
+  color: rgb(var(--link-hover));
+  text-decoration: underline;
+}
+
+/* Styles pour les boutons avec focus amélioré */
+.btn-primary, .bg-blue-600 {
+  background-color: rgb(var(--accent-color));
+  color: rgb(var(--button-text)) !important;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary:hover, .bg-blue-600:hover, .bg-blue-700 {
+  background-color: rgb(30, 64, 175);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active, .bg-blue-600:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet de splash sur les boutons */
+.btn-primary::after, .bg-blue-600::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  z-index: -1;
+}
+
+.btn-primary:hover::after, .bg-blue-600:hover::after {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(40, 40);
+    opacity: 0;
+  }
+}
+
+/* Styles pour les accents */
+.accent-bg {
+  background-color: rgb(var(--accent-light));
+}
+
+.dark .accent-bg {
+  background-color: rgb(var(--accent-light));
+}
+
+/* Optimisations responsive */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Optimisations pour les images */
+img, svg, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Animation douce au chargement de la page */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Animation d'apparition progressive des éléments */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optimisations pour le texte */
+.prose {
+  max-width: none;
+}
+
+.prose h1, 
+.prose h2, 
+.prose h3, 
+.prose h4, 
+.prose h5, 
+.prose h6 {
+  color: rgb(var(--heading-color));
+  font-weight: 700;
+  margin-bottom: 1rem;
+  scroll-margin-top: 100px; /* Pour l'ancrage avec des liens #hash */
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  color: rgb(var(--text-color));
+}
+
+.prose ul, 
+.prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.25rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  color: rgb(var(--text-color));
+}
+
+.prose a {
+  color: rgb(var(--link-color));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: rgb(var(--link-hover));
+  text-decoration: underline;
+}
+
+/* Amélioration des tableaux */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.prose th {
+  background-color: rgb(var(--accent-light));
+  border: 1px solid rgb(var(--card-border));
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.prose td {
+  border: 1px solid rgb(var(--card-border));
+  padding: 0.75rem;
+}
+
+.prose tbody tr:nth-child(even) {
+  background-color: rgba(var(--card-bg), 0.5);
+}
+
+/* Classes d'aide pour le mode sombre */
+.dark-text {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+.dark-bg {
+  @apply bg-white dark:bg-slate-900;
+}
+
+.dark-border {
+  @apply border-gray-200 dark:border-slate-700;
+}
+
+.dark-card {
+  @apply bg-white dark:bg-slate-800 border-gray-200 dark:border-slate-700;
+}
+
+/* Amélioration du contraste pour les textes en mode clair */
+.text-gray-600 {
+  @apply text-gray-700;
+}
+
+.text-gray-500 {
+  @apply text-gray-600;
+}
+
+/* Amélioration des contrastes pour les cartes en mode clair */
+.bg-gray-50 {
+  @apply bg-gray-100;
+}
+
+/* Amélioration des boutons */
+.bg-blue-600 {
+  @apply shadow-md;
+}
+
+.bg-blue-600:hover {
+  @apply shadow-lg;
+}
+
+/* Amélioration des textes en mode clair */
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-900 {
+  color: #111827 !important;
+}
+
+/* Amélioration des boutons avec texte blanc */
+.text-white {
+  color: white !important;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Amélioration des boutons sur la page d'accueil */
+.inline-flex.items-center.justify-center.px-6.py-3 {
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.inline-flex.items-center.justify-center.px-6.py-3:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Styles pour la navigation */
+header nav a {
+  color: white !important;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+header nav a:hover {
+  color: white !important;
+  text-decoration: underline;
+}
+
+/* Cohérence des couleurs pour le mode sombre */
+.dark .text-gray-900 {
+  color: #f3f4f6 !important; /* Équivalent à text-gray-100 */
+}
+
+.dark .text-gray-800 {
+  color: #e5e7eb !important; /* Équivalent à text-gray-200 */
+}
+
+.dark .text-gray-700 {
+  color: #d1d5db !important; /* Équivalent à text-gray-300 */
+}
+
+.dark .text-gray-600 {
+  color: #9ca3af !important; /* Équivalent à text-gray-400 */
+}
+
+/* Assurer la visibilité des textes sur fond sombre */
+.dark .bg-gray-900 p,
+.dark .bg-gray-800 p,
+.dark .bg-slate-900 p,
+.dark .bg-slate-800 p {
+  color: #e5e7eb !important; /* text-gray-200 */
+}
+
+/* Optimisations pour l'impression */
+@media print {
+  body {
+    font-size: 12pt;
+    background: white;
+    color: black;
+  }
+  
+  .no-print {
+    display: none;
+  }
+  
+  a {
+    text-decoration: underline;
+    color: black;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #333;
+  }
+  
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+  
+  p, blockquote, table, ul, ol, dl {
+    page-break-inside: avoid;
+  }
+}
+
+/* Amélioration pour le chargement des images */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(var(--card-bg), 0.1);
+}
+
+.image-container img {
+  transition: opacity 0.3s ease;
+}
+
+.image-container.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(var(--accent-light), 0.2), transparent);
+  animation: shimmer 1.5s infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Accessibilité : masquer visuellement mais garder accessible pour les lecteurs d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+} 

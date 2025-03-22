@@ -1,0 +1,146 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "projects": "Projects",
+      "movingServices": "Moving & Clearance",
+      "volumeCalculator": "Volume Calculator",
+      "contact": "Contact"
+    },
+    "buttons": {
+      "requestQuote": "Request a free quote",
+      "viewProjects": "View our projects",
+      "callUs": "Call us",
+      "learnMore": "Learn more",
+      "sendRequest": "Send request",
+      "contactUs": "Contact us"
+    },
+    "footer": {
+      "services": "Services",
+      "company": "Company",
+      "legal": "Legal",
+      "allRightsReserved": "All rights reserved",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "openingHours": "Opening hours"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Your trusted partner for all your projects",
+      "subtitle": "Construction, renovation, electricity, locksmithing, cleaning and moving in French-speaking Switzerland with a quality guarantee."
+    },
+    "services": {
+      "title": "Our services",
+      "subtitle": "Complete solutions for all your projects",
+      "constructionRenovation": {
+        "title": "Construction & Renovation",
+        "description": "Transformation, complete renovation, extension and interior design by qualified professionals."
+      },
+      "electricityRepair": {
+        "title": "Electricity & Repair",
+        "description": "Electrical installation, standards compliance, home automation and 24/7 emergency interventions."
+      },
+      "locksmithingRepair": {
+        "title": "Locksmithing & Repair",
+        "description": "Installation and repair of locks, door opening and emergency interventions."
+      },
+      "cleaningConcierge": {
+        "title": "Cleaning & Concierge",
+        "description": "End-of-construction cleaning, regular maintenance, window cleaning and concierge services."
+      },
+      "movingClearance": {
+        "title": "Moving & Clearance",
+        "description": "Apartment clearance, waste disposal, moving and storage."
+      },
+      "otherServices": {
+        "title": "Other services",
+        "description": "Plumbing, heating, air conditioning, carpentry and other services on request."
+      }
+    },
+    "projects": {
+      "title": "Our recent projects",
+      "subtitle": "Discover our latest achievements"
+    },
+    "about": {
+      "title": "About Globibat",
+      "subtitle": "Your trusted partner since 2023",
+      "description": "Globibat is a general construction company founded by two passionate artisans in Nyon. We offer a complete range of services for all your construction, renovation and maintenance projects."
+    },
+    "whyChooseUs": {
+      "title": "Why choose us?",
+      "subtitle": "Our values and commitments",
+      "expertise": {
+        "title": "Expertise",
+        "description": "A team of qualified professionals in all trades to meet all your needs."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Careful work and quality materials for lasting and aesthetic results."
+      },
+      "reliability": {
+        "title": "Reliability",
+        "description": "Meeting deadlines and commitments, transparency and communication throughout the project."
+      },
+      "customerService": {
+        "title": "Customer service",
+        "description": "A personalized approach, listening to your needs for total satisfaction."
+      }
+    },
+    "testimonials": {
+      "title": "What our clients say",
+      "subtitle": "Discover the testimonials of our satisfied customers"
+    },
+    "cta": {
+      "title": "Ready to start your project?",
+      "subtitle": "Contact us today for a free quote and personalized advice."
+    }
+  },
+  "contact": {
+    "title": "Contact us",
+    "subtitle": "We are at your disposal for all your projects",
+    "form": {
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "serviceRequested": "Service requested",
+      "message": "Message",
+      "description": "Fill out the form below for a quote request or call us directly at",
+      "success": "Thank you for your message!",
+      "successMessage": "We have received your request and will contact you as soon as possible.",
+      "sendAnother": "Send another message"
+    },
+    "contact": {
+      "title": "Our contact details",
+      "monday": "Monday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday",
+      "closed": "Closed",
+      "emergencyService": "Emergency service available 24/7"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "howToGetQuote": {
+        "question": "How to get a free quote?",
+        "answer": "You can get a free quote by filling out our contact form, by calling us directly or by sending us an email. We will respond within 24 business hours."
+      },
+      "areas": {
+        "question": "What geographical areas do you cover?",
+        "answer": "We operate mainly in French-speaking Switzerland. For more distant projects, don't hesitate to contact us to discuss your situation."
+      },
+      "responseTimes": {
+        "question": "What are your response times?",
+        "answer": "For emergencies (locksmithing, electricity), we generally respond within the hour. For construction or renovation projects, timeframes depend on the scope of the work and are defined when the quote is established."
+      },
+      "standards": {
+        "question": "Do you comply with Swiss standards and certifications?",
+        "answer": "Yes, all our work is carried out in strict compliance with current Swiss standards. Our team is trained and certified to work in all the areas we offer, thus guaranteeing quality work that complies with legal requirements."
+      }
+    }
+  }
+} 

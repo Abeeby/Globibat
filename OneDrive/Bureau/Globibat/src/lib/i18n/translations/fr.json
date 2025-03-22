@@ -1,0 +1,146 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Accueil",
+      "about": "À propos",
+      "services": "Services",
+      "projects": "Projets",
+      "movingServices": "Débarras & déménagement",
+      "volumeCalculator": "Calculateur de volume",
+      "contact": "Contact"
+    },
+    "buttons": {
+      "requestQuote": "Demander un devis gratuit",
+      "viewProjects": "Voir nos réalisations",
+      "callUs": "Appelez-nous",
+      "learnMore": "En savoir plus",
+      "sendRequest": "Envoyer la demande",
+      "contactUs": "Contactez-nous"
+    },
+    "footer": {
+      "services": "Services",
+      "company": "Entreprise",
+      "legal": "Légal",
+      "allRightsReserved": "Tous droits réservés",
+      "address": "Adresse",
+      "phone": "Téléphone",
+      "email": "Email",
+      "openingHours": "Horaires d'ouverture"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Votre partenaire de confiance pour tous vos projets",
+      "subtitle": "Construction, rénovation, électricité, serrurerie, nettoyage et déménagement en Suisse romande avec une garantie de qualité."
+    },
+    "services": {
+      "title": "Nos services",
+      "subtitle": "Des solutions complètes pour tous vos projets",
+      "constructionRenovation": {
+        "title": "Construction & Rénovation",
+        "description": "Transformation, rénovation complète, extension et aménagement intérieur par des professionnels qualifiés."
+      },
+      "electricityRepair": {
+        "title": "Électricité & Dépannage",
+        "description": "Installation électrique, mise aux normes, domotique et interventions d'urgence 24h/24."
+      },
+      "locksmithingRepair": {
+        "title": "Serrurerie & Dépannage",
+        "description": "Installation et réparation de serrures, ouverture de portes et interventions d'urgence."
+      },
+      "cleaningConcierge": {
+        "title": "Nettoyage & Conciergerie",
+        "description": "Nettoyage de fin de chantier, entretien régulier, nettoyage de vitres et conciergerie."
+      },
+      "movingClearance": {
+        "title": "Débarras & Déménagement",
+        "description": "Débarras d'appartements, évacuation de déchets, déménagement et garde-meubles."
+      },
+      "otherServices": {
+        "title": "Autres services",
+        "description": "Plomberie, chauffage, climatisation, menuiserie et autres services sur demande."
+      }
+    },
+    "projects": {
+      "title": "Nos projets récents",
+      "subtitle": "Découvrez nos dernières réalisations"
+    },
+    "about": {
+      "title": "À propos de Globibat",
+      "subtitle": "Votre partenaire de confiance depuis 2023",
+      "description": "Globibat est une entreprise générale de construction fondée par deux artisans passionnés à Nyon. Nous proposons une gamme complète de services pour tous vos projets de construction, rénovation et maintenance."
+    },
+    "whyChooseUs": {
+      "title": "Pourquoi nous choisir ?",
+      "subtitle": "Nos valeurs et engagements",
+      "expertise": {
+        "title": "Expertise",
+        "description": "Une équipe de professionnels qualifiés dans tous les corps de métier pour répondre à tous vos besoins."
+      },
+      "quality": {
+        "title": "Qualité",
+        "description": "Un travail soigné et des matériaux de qualité pour des résultats durables et esthétiques."
+      },
+      "reliability": {
+        "title": "Fiabilité",
+        "description": "Respect des délais et des engagements, transparence et communication tout au long du projet."
+      },
+      "customerService": {
+        "title": "Service client",
+        "description": "Une approche personnalisée, à l'écoute de vos besoins pour une satisfaction totale."
+      }
+    },
+    "testimonials": {
+      "title": "Ce que disent nos clients",
+      "subtitle": "Découvrez les témoignages de nos clients satisfaits"
+    },
+    "cta": {
+      "title": "Prêt à démarrer votre projet ?",
+      "subtitle": "Contactez-nous dès aujourd'hui pour un devis gratuit et des conseils personnalisés."
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes à votre écoute pour tous vos projets",
+    "form": {
+      "fullName": "Nom complet",
+      "email": "Email",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "serviceRequested": "Service souhaité",
+      "message": "Message",
+      "description": "Remplissez le formulaire ci-dessous pour une demande de devis ou appelez-nous directement au",
+      "success": "Merci pour votre message !",
+      "successMessage": "Nous avons bien reçu votre demande et nous vous contacterons dans les plus brefs délais.",
+      "sendAnother": "Envoyer un autre message"
+    },
+    "contact": {
+      "title": "Nos coordonnées",
+      "monday": "Lundi",
+      "friday": "Vendredi",
+      "saturday": "Samedi",
+      "sunday": "Dimanche",
+      "closed": "Fermé",
+      "emergencyService": "Service d'urgence disponible 24h/24, 7j/7"
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "howToGetQuote": {
+        "question": "Comment obtenir un devis gratuit ?",
+        "answer": "Vous pouvez obtenir un devis gratuit en remplissant notre formulaire de contact, en nous appelant directement ou en nous envoyant un email. Nous vous répondrons dans les 24 heures ouvrables."
+      },
+      "areas": {
+        "question": "Quelles zones géographiques couvrez-vous ?",
+        "answer": "Nous intervenons principalement en Suisse romande. Pour des projets plus éloignés, n'hésitez pas à nous contacter pour discuter de votre situation."
+      },
+      "responseTimes": {
+        "question": "Quels sont vos délais d'intervention ?",
+        "answer": "Pour les urgences (serrurerie, électricité), nous intervenons généralement dans l'heure. Pour les projets de construction ou rénovation, les délais dépendent de l'ampleur des travaux et sont définis lors de l'établissement du devis."
+      },
+      "standards": {
+        "question": "Respectez-vous les normes et certifications suisses ?",
+        "answer": "Oui, tous nos travaux sont réalisés dans le strict respect des normes suisses en vigueur. Notre équipe est formée et certifiée pour intervenir dans tous les domaines que nous proposons, garantissant ainsi un travail de qualité conforme aux exigences légales."
+      }
+    }
+  }
+} 

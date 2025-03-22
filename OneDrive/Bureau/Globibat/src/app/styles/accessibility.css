@@ -1,0 +1,77 @@
+/* Styles d'accessibilité pour améliorer l'expérience utilisateur */
+
+/* Focus visible pour les utilisateurs de clavier */
+:focus-visible {
+  outline: 3px solid #4299e1 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.6) !important;
+}
+
+/* Cacher visuellement mais rester accessible pour les lecteurs d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Améliorer le contraste des liens */
+a {
+  text-decoration: underline;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+/* Augmenter l'espacement des listes pour améliorer la lisibilité */
+ul, ol {
+  line-height: 1.6;
+}
+
+/* Assurer un bon espacement des paragraphes */
+p {
+  margin-bottom: 1rem;
+}
+
+/* Assurer un bon contraste pour les boutons */
+button:focus {
+  outline: 3px solid #4299e1;
+  outline-offset: 2px;
+}
+
+/* Améliorer l'accessibilité des tableaux */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  background-color: #f7fafc;
+}
+
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* Skip links - permettre aux utilisateurs de clavier de sauter la navigation */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+} 
