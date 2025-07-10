@@ -104,7 +104,7 @@ export default function RealisationsPage() {
       <Breadcrumb
         items={[
           { label: 'Accueil', href: '/' },
-          { label: 'Réalisations', href: '/realisations', active: true },
+          { label: 'Réalisations', href: '/realisations' },
         ]}
       />
       
