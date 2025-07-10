@@ -29,18 +29,17 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://globibat.com'),
+  metadataBase: new URL('https://globibat.ch'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://globibat.ch',
     languages: {
-      'fr-CH': '/fr',
-      'en-GB': '/en',
+      'fr-CH': '/',
     },
   },
   openGraph: {
     title: 'Globibat - Entreprise générale de construction et rénovation en Suisse romande',
     description: 'Votre partenaire de confiance pour tous vos projets de construction, rénovation, électricité, serrurerie et déménagement en Suisse romande.',
-    url: 'https://globibat.com',
+    url: 'https://globibat.ch',
     siteName: 'Globibat',
     locale: 'fr_CH',
     type: 'website',
@@ -61,7 +60,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-site-verification',
+    google: 'TO_REPLACE', // À remplacer par le code de vérification Google Search Console
   },
 };
 
