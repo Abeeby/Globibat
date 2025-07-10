@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: 'https://globibat.ch',
-  generateRobotsTxt: true, // Génère aussi robots.txt
+  generateRobotsTxt: false, // On utilise le robots.txt statique dans /public
   changefreq: 'weekly',
   priority: 0.7,
   sitemapSize: 7000,
@@ -9,28 +9,14 @@ const config = {
   exclude: [
     '/404',
     '/500',
+    '/api',
     '/api/*',
+    '/api/**',
     '/admin/*',
     '/private/*',
     '/drafts/*',
     '/en/*', // Pages en anglais non traduites
   ],
-  robotsTxtOptions: {
-    policies: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/private/',
-        ],
-      },
-    ],
-    additionalSitemaps: [
-      // Si vous avez d'autres sitemaps spécifiques
-    ],
-  },
   transform: async (config, path) => {
     // Priorité basée sur la profondeur et l'importance
     let priority = 0.7; // Priorité par défaut

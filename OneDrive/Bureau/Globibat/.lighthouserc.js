@@ -19,6 +19,7 @@ module.exports = {
         'first-contentful-paint': ['warn', { maxNumericValue: 1800 }],
         'cumulative-layout-shift': ['error', { maxNumericValue: 0.1 }],
         'total-blocking-time': ['warn', { maxNumericValue: 300 }],
+        'interaction-to-next-paint': ['warn', { maxNumericValue: 200 }], // INP < 200ms
         
         // Budgets de performance
         'resource-summary:script:size': ['warn', { maxNumericValue: 170000 }], // JS < 170kb
@@ -41,6 +42,17 @@ module.exports = {
         'uses-long-cache-ttl': 'off',
         'uses-http2': 'off',
       },
+      budgets: [
+        {
+          path: '/**',
+          resourceSizes: [
+            {
+              resourceType: 'image',
+              budget: 250, // 250kb par image max
+            },
+          ],
+        },
+      ],
     },
     upload: {
       target: 'temporary-public-storage',
