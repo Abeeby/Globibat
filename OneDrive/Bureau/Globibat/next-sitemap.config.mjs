@@ -32,34 +32,44 @@ const config = {
     ],
   },
   transform: async (config, path) => {
-    // Priorités personnalisées selon les pages
-    const priorities = {
-      '/': 1.0,
-      '/services': 0.9,
-      '/services/construction-renovation': 0.8,
-      '/services/electricite-depannage': 0.8,
-      '/services/serrurerie-depannage': 0.8,
-      '/contact': 0.9,
-      '/projets-realises': 0.8,
-      '/a-propos': 0.7,
-      '/temoignages': 0.7,
-      '/faq': 0.7,
-      '/calculateur-volume': 0.6,
-      '/blog': 0.6,
-    };
+    // Priorité basée sur la profondeur et l'importance
+    let priority = 0.7; // Priorité par défaut
+    
+    // Page d'accueil = priorité maximale
+    if (path === '/') {
+      priority = 1.0;
+    }
+    // Pages principales = haute priorité
+    else if (path.match(/^\/(services|contact|projets-realises)$/)) {
+      priority = 0.9;
+    }
+    // Sous-pages de services = priorité élevée
+    else if (path.match(/^\/services\/[^\/]+$/)) {
+      priority = 0.8;
+    }
+    // Pages secondaires
+    else if (path.match(/^\/(a-propos|temoignages|faq|calculateur-volume)$/)) {
+      priority = 0.7;
+    }
+    // Blog et pages profondes = priorité moyenne
+    else if (path.startsWith('/blog') || path.split('/').length > 3) {
+      priority = 0.6;
+    }
+    // Pages légales = faible priorité
+    else if (path.match(/\/(mentions-legales|politique-|cookies)/)) {
+      priority = 0.3;
+    }
 
-    const changefreqs = {
-      '/': 'daily',
-      '/services': 'weekly',
-      '/contact': 'monthly',
-      '/projets-realises': 'weekly',
-      '/blog': 'weekly',
-    };
-
+    // Fréquence de changement basée sur le type de page
+    let changefreq = 'weekly';
+    if (path === '/') changefreq = 'daily';
+    else if (path.match(/\/(contact|mentions-legales|politique-)/)) changefreq = 'monthly';
+    else if (path.startsWith('/blog')) changefreq = 'weekly';
+    
     return {
       loc: path,
-      changefreq: changefreqs[path] || config.changefreq,
-      priority: priorities[path] || config.priority,
+      changefreq,
+      priority,
       lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
     };
   },

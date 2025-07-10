@@ -2,7 +2,9 @@
 
 # Allow all crawlers
 User-Agent: *
-Allow: /
+
+# Host directive for Yandex
+Host: https://globibat.ch
 
 # Sitemap location
 Sitemap: https://globibat.ch/sitemap.xml 
