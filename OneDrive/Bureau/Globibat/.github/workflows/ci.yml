@@ -82,3 +82,23 @@ jobs:
           .next/
           public/sitemap.xml
           public/robots.txt
+    
+    - name: Run Lighthouse CI
+      uses: treosh/lighthouse-ci-action@v12
+      if: success()
+      with:
+        urls: |
+          http://localhost:3000
+          http://localhost:3000/services
+          http://localhost:3000/contact
+        uploadArtifacts: true
+        temporaryPublicStorage: true
+        configPath: './.lighthouserc.js'
+      continue-on-error: true
+    
+    - name: Upload Lighthouse results
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: lighthouse-reports
+        path: .lighthouseci/

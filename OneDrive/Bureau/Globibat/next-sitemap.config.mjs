@@ -12,6 +12,8 @@ const config = {
     '/api/*',
     '/admin/*',
     '/private/*',
+    '/drafts/*',
+    '/en/*', // Pages en anglais non traduites
   ],
   robotsTxtOptions: {
     policies: [

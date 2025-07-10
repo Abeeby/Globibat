@@ -156,7 +156,7 @@ export default function HomePage() {
       {/* JSON-LD pour le SEO local */}
       <LocalBusinessJsonLd
         type="HomeAndConstructionBusiness"
-        id="https://globibat.ch"
+        id="https://globibat.ch/#globibat"
         name="Globibat SA"
         description="Entreprise générale de construction, rénovation, électricité, serrurerie et déménagement en Suisse romande"
         url="https://globibat.ch"
@@ -216,6 +216,14 @@ export default function HomePage() {
           {
             questionName: "Êtes-vous agréés et assurés ?",
             acceptedAnswerText: "Oui, Globibat SA est une entreprise agréée, disposant de toutes les assurances nécessaires (RC professionnelle, garantie décennale) pour garantir la qualité et la sécurité de nos prestations.",
+          },
+          {
+            questionName: "Quels moyens de paiement acceptez-vous ?",
+            acceptedAnswerText: "Nous acceptons les virements bancaires, cartes de crédit (Visa, Mastercard), Twint et paiements en espèces. Pour les gros projets, un échelonnement des paiements est possible.",
+          },
+          {
+            questionName: "Faites-vous des travaux de rénovation énergétique ?",
+            acceptedAnswerText: "Oui, nous sommes spécialisés dans la rénovation énergétique : isolation thermique, changement de fenêtres, installation de pompes à chaleur. Nous vous conseillons sur les subventions disponibles en Suisse romande.",
           },
         ]}
       />
@@ -315,7 +323,7 @@ export default function HomePage() {
                     alt={project.title} 
                     fill 
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">

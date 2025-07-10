@@ -1,8 +1,8 @@
 # www.robotstxt.org/
 
 # Allow all crawlers
-User-agent: *
+User-Agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://www.globibat.com/sitemap.xml 
+Sitemap: https://globibat.ch/sitemap.xml 
