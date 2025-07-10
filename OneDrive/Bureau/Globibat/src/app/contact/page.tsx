@@ -33,7 +33,7 @@ export default function ContactPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             <div className="lg:col-span-2">
-              <ContactForm />
+              <ContactForm lang="fr" />
             </div>
             
             <div className="bg-white rounded-lg shadow-md p-8">
