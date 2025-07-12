@@ -1,8 +1,4 @@
-'use client';
-
-import { useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { FaHome, FaSearch, FaArrowLeft } from 'react-icons/fa';
 
 export const metadata = {
@@ -11,23 +7,9 @@ export const metadata = {
 };
 
 export default function NotFound() {
-  // Enregistrer l'erreur 404 dans Google Analytics
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'gtag' in window) {
-      // @ts-ignore
-      window.gtag('event', '404_error', {
-        page_path: window.location.pathname,
-        page_title: 'Page non trouvée',
-      });
-    }
-  }, []);
-
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+      <div
         className="max-w-xl w-full text-center space-y-8"
       >
         <h1 className="text-6xl font-bold text-blue-600">404</h1>
@@ -56,13 +38,10 @@ export default function NotFound() {
             </Link>
           </div>
 
-          <button
-            onClick={() => window.history.back()}
-            className="flex items-center gap-2 px-6 py-3 text-gray-600 hover:text-gray-900 transition-colors mx-auto"
-          >
+          <div className="flex items-center gap-2 px-6 py-3 text-gray-500 mx-auto">
             <FaArrowLeft aria-hidden="true" />
-            <span>Retour à la page précédente</span>
-          </button>
+            <span>Utilisez le bouton retour de votre navigateur</span>
+          </div>
         </div>
 
         <div className="mt-12 text-gray-500">
@@ -85,7 +64,7 @@ export default function NotFound() {
             </li>
           </ul>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 } 
