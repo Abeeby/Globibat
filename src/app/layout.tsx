@@ -62,6 +62,12 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GSC_TOKEN || '', // Variable d'environnement pour Google Search Console
   },
+  viewport: 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5',
+  themeColor: '#1E40AF',
+  icons: {
+    icon: '/images/logo/Logo Globibat.png',
+    apple: '/images/logo/Logo Globibat.png',
+  },
 };
 
 export default function RootLayout({
@@ -71,14 +77,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" suppressHydrationWarning className={inter.variable}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
-        <meta name="theme-color" content="#1E40AF" />
-        <link rel="icon" href="/images/logo/Logo Globibat.png" />
-        <link rel="apple-touch-icon" href="/images/logo/Logo Globibat.png" />
-        <GoogleAnalytics />
-      </head>
       <body className={inter.className}>
+        <GoogleAnalytics />
         <ErrorBoundary>
           <ThemeProvider>
             <AccessibilityProvider>
