@@ -8,7 +8,7 @@ import LiveChat from '@/components/ui/LiveChat';
 import FloatingContact from '@/components/ui/FloatingContact';
 import AccessibilityProvider from '@/components/ui/AccessibilityProvider';
 import { ThemeProvider } from '@/lib/providers/ThemeProvider';
-import GoogleAnalytics from '@/components/analytics/GoogleAnalytics';
+
 import ErrorBoundary from '@/components/ui/ErrorBoundary';
 
 const inter = Inter({ 
@@ -62,12 +62,18 @@ export const metadata: Metadata = {
   verification: {
     google: process.env.NEXT_PUBLIC_GSC_TOKEN || '', // Variable d'environnement pour Google Search Console
   },
-  viewport: 'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5',
-  themeColor: '#1E40AF',
   icons: {
     icon: '/images/logo/Logo Globibat.png',
     apple: '/images/logo/Logo Globibat.png',
   },
+};
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
+  themeColor: '#1E40AF',
 };
 
 export default function RootLayout({
@@ -78,7 +84,6 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning className={inter.variable}>
       <body className={inter.className}>
-        <GoogleAnalytics />
         <ErrorBoundary>
           <ThemeProvider>
             <AccessibilityProvider>
