@@ -1,7 +1,7 @@
-import { DefaultSeoProps } from 'next-seo';
+// import { DefaultSeoProps } from 'next-seo';
 
 // Configuration SEO par défaut pour tout le site
-const SEO_CONFIG: DefaultSeoProps = {
+const SEO_CONFIG: any = {
   titleTemplate: '%s | Globibat - Entreprise générale de construction en Suisse',
   defaultTitle: 'Globibat - Entreprise générale de construction et rénovation en Suisse',
   description: 'Globibat, votre partenaire de confiance pour tous vos projets de construction, rénovation, électricité, serrurerie et déménagement en Suisse. Devis gratuit et service de qualité.',
