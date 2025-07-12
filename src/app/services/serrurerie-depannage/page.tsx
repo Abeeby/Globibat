@@ -18,7 +18,7 @@ export default function SerrureriePage() {
         items={[
           { label: 'Accueil', href: '/' },
           { label: 'Services', href: '/services' },
-          { label: 'Serrurerie & Dépannage', href: '/services/serrurerie-depannage', active: true },
+          { label: 'Serrurerie & Dépannage', href: '/services/serrurerie-depannage' },
         ]}
       />
       

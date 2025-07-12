@@ -2,7 +2,7 @@
 
 import React, { useState, FormEvent } from 'react';
 import { FaUser, FaEnvelope, FaPhone, FaHome, FaComments, FaCheck, FaExclamationTriangle, FaPhoneAlt } from 'react-icons/fa';
-import { useTranslation } from '@/lib/i18n';
+import { useTranslations, useLocale } from '@/lib/i18n';
 
 interface FormData {
   name: string;
@@ -25,8 +25,9 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ lang }: ContactFormProps) {
-  const { t, locale } = useTranslation();
-  const isEnglish = lang === 'en' || locale === 'en';
+  const { t } = useTranslations();
+  const { currentLocale } = useLocale();
+  const isEnglish = lang === 'en' || currentLocale === 'en';
   
   const [formData, setFormData] = useState<FormData>({
     name: '',
