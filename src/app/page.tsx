@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowRight, FaTools, FaLock, FaBroom, FaHome, FaBolt, FaTruck, FaStar, FaQuoteLeft, FaGoogle, FaCheckCircle, FaCalendarCheck, FaUserTie, FaPhoneAlt } from 'react-icons/fa';
 import SectionHeading from '../components/ui/SectionHeading';
-import { LocalBusinessJsonLd, FAQPageJsonLd } from 'next-seo';
+// import { LocalBusinessJsonLd, FAQPageJsonLd } from 'next-seo';
 
 export const metadata = {
   title: 'Globibat - Entreprise générale de construction en Suisse romande',
@@ -154,78 +154,120 @@ export default function HomePage() {
   return (
     <>
       {/* JSON-LD pour le SEO local */}
-      <LocalBusinessJsonLd
-        type="HomeAndConstructionBusiness"
-        id="https://globibat.ch/#globibat"
-        name="Globibat SA"
-        description="Entreprise générale de construction, rénovation, électricité, serrurerie et déménagement en Suisse romande"
-        url="https://globibat.ch"
-        telephone="+41221234567"
-        address={{
-          streetAddress: "Rue du Stand 42",
-          addressLocality: "Genève",
-          addressRegion: "GE",
-          postalCode: "1204",
-          addressCountry: "CH",
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HomeAndConstructionBusiness",
+            "@id": "https://globibat.ch/#globibat",
+            "name": "Globibat SA",
+            "description": "Entreprise générale de construction, rénovation, électricité, serrurerie et déménagement en Suisse romande",
+            "url": "https://globibat.ch",
+            "telephone": "+41221234567",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Rue du Stand 42",
+              "addressLocality": "Genève",
+              "addressRegion": "GE",
+              "postalCode": "1204",
+              "addressCountry": "CH"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "46.2044",
+              "longitude": "6.1432"
+            },
+            "image": [
+              "https://globibat.ch/images/logo/Logo Globibat.png",
+              "https://globibat.ch/images/hero.jpg"
+            ],
+            "sameAs": [
+              "https://www.google.com/search?client=firefox-b-d&q=globibat+#mpd=~1653490024473585108"
+            ],
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "09:00",
+                "closes": "16:00"
+              }
+            ],
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5.0",
+              "ratingCount": "17"
+            },
+            "priceRange": "$$"
+          })
         }}
-        geo={{
-          latitude: "46.2044",
-          longitude: "6.1432",
-        }}
-        images={[
-          "https://globibat.ch/images/logo/Logo Globibat.png",
-          "https://globibat.ch/images/hero.jpg",
-        ]}
-        sameAs={[
-          "https://www.google.com/search?client=firefox-b-d&q=globibat+#mpd=~1653490024473585108",
-        ]}
-        openingHours={[
-          {
-            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            opens: "08:00",
-            closes: "18:00",
-          },
-          {
-            dayOfWeek: ["Saturday"],
-            opens: "09:00",
-            closes: "16:00",
-          },
-        ]}
-        rating={{
-          ratingValue: "5.0",
-          ratingCount: "17",
-        }}
-        priceRange="$$"
       />
       
       {/* FAQ Schema */}
-      <FAQPageJsonLd
-        mainEntity={[
-          {
-            questionName: "Quels sont vos délais d'intervention pour un dépannage urgent ?",
-            acceptedAnswerText: "Pour les dépannages urgents en électricité et serrurerie, nous intervenons dans l'heure qui suit votre appel, 24h/24 et 7j/7 sur Genève et ses environs.",
-          },
-          {
-            questionName: "Proposez-vous des devis gratuits ?",
-            acceptedAnswerText: "Oui, nous proposons des devis gratuits et sans engagement pour tous vos projets de construction, rénovation et aménagement. Un expert se déplace pour évaluer vos besoins.",
-          },
-          {
-            questionName: "Quelles zones géographiques couvrez-vous ?",
-            acceptedAnswerText: "Nous intervenons dans toute la Suisse romande, principalement sur Genève, Lausanne, Nyon et leurs alentours. Pour les projets importants, nous pouvons étendre notre zone d'intervention.",
-          },
-          {
-            questionName: "Êtes-vous agréés et assurés ?",
-            acceptedAnswerText: "Oui, Globibat SA est une entreprise agréée, disposant de toutes les assurances nécessaires (RC professionnelle, garantie décennale) pour garantir la qualité et la sécurité de nos prestations.",
-          },
-          {
-            questionName: "Quels moyens de paiement acceptez-vous ?",
-            acceptedAnswerText: "Nous acceptons les virements bancaires, cartes de crédit (Visa, Mastercard), Twint et paiements en espèces. Pour les gros projets, un échelonnement des paiements est possible.",
-          },
-          {
-            questionName: "Faites-vous des travaux de rénovation énergétique ?",
-            acceptedAnswerText: "Oui, nous sommes spécialisés dans la rénovation énergétique : isolation thermique, changement de fenêtres, installation de pompes à chaleur. Nous vous conseillons sur les subventions disponibles en Suisse romande.",
-          },
-        ]}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quels sont vos délais d'intervention pour un dépannage urgent ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pour les dépannages urgents en électricité et serrurerie, nous intervenons dans l'heure qui suit votre appel, 24h/24 et 7j/7 sur Genève et ses environs."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Proposez-vous des devis gratuits ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, nous proposons des devis gratuits et sans engagement pour tous vos projets de construction, rénovation et aménagement. Un expert se déplace pour évaluer vos besoins."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelles zones géographiques couvrez-vous ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nous intervenons dans toute la Suisse romande, principalement sur Genève, Lausanne, Nyon et leurs alentours. Pour les projets importants, nous pouvons étendre notre zone d'intervention."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Êtes-vous agréés et assurés ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, Globibat SA est une entreprise agréée, disposant de toutes les assurances nécessaires (RC professionnelle, garantie décennale) pour garantir la qualité et la sécurité de nos prestations."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quels moyens de paiement acceptez-vous ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Nous acceptons les virements bancaires, cartes de crédit (Visa, Mastercard), Twint et paiements en espèces. Pour les gros projets, un échelonnement des paiements est possible."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Faites-vous des travaux de rénovation énergétique ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, nous sommes spécialisés dans la rénovation énergétique : isolation thermique, changement de fenêtres, installation de pompes à chaleur. Nous vous conseillons sur les subventions disponibles en Suisse romande."
+                }
+              }
+            ]
+          })
+        }}
       />
       
     <main>
