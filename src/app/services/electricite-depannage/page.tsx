@@ -18,7 +18,7 @@ export default function ElectricitePage() {
         items={[
           { label: 'Accueil', href: '/' },
           { label: 'Services', href: '/services' },
-          { label: 'Électricité & Dépannage', href: '/services/electricite-depannage', active: true },
+          { label: 'Électricité & Dépannage', href: '/services/electricite-depannage' },
         ]}
       />
       

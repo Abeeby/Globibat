@@ -1,6 +1,0 @@
-{
-  "rootDirectory": "OneDrive/Bureau/Globibat",
-  "framework": "nextjs",
-  "buildCommand": "pnpm install && pnpm build",
-  "outputDirectory": ".next"
-}
