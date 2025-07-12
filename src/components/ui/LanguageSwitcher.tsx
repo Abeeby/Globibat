@@ -1,22 +1,16 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { FaGlobe } from 'react-icons/fa';
-import { getCurrentLocale, changeLanguage, getLocalizedUrl } from '@/lib/i18n';
+import { useLocale } from '@/lib/i18n';
 
 interface LanguageSwitcherProps {
   className?: string;
 }
 
 export default function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
-  const [locale, setLocale] = useState<string>('fr');
+  const { currentLocale, switchLocale } = useLocale();
   const [isOpen, setIsOpen] = useState(false);
-  
-  // Récupérer la langue actuelle
-  useEffect(() => {
-    setLocale(getCurrentLocale());
-  }, []);
   
   // Les langues disponibles
   const locales = ['fr', 'en']; // Ajouter 'de' plus tard pour l'allemand
@@ -60,8 +54,8 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
   // Gestionnaire de changement de langue
   const handleLanguageChange = (newLocale: string) => {
     setIsOpen(false);
-    if (newLocale !== locale) {
-      changeLanguage(newLocale);
+    if (newLocale !== currentLocale) {
+      switchLocale(newLocale as 'fr' | 'en');
     }
   };
   
@@ -77,8 +71,8 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
         aria-label="Changer la langue"
       >
         <FaGlobe className="mr-2" />
-        <span className="hidden sm:inline-block">{getFlag(locale)} {languageNames[locale]}</span>
-        <span className="sm:hidden">{getFlag(locale)}</span>
+        <span className="hidden sm:inline-block">{getFlag(currentLocale)} {languageNames[currentLocale]}</span>
+        <span className="sm:hidden">{getFlag(currentLocale)}</span>
       </button>
       
       {isOpen && (
@@ -89,7 +83,7 @@ export default function LanguageSwitcher({ className = '' }: LanguageSwitcherPro
                 key={loc}
                 onClick={() => handleLanguageChange(loc)}
                 className={`flex items-center px-4 py-2 text-sm w-full text-left ${
-                  locale === loc
+                  currentLocale === loc
                     ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium'
                     : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                 }`}
