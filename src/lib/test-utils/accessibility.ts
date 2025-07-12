@@ -1,3 +1,4 @@
+import React from 'react';
 import { render } from '@testing-library/react';
 import { axe, toHaveNoViolations } from 'jest-axe';
 
@@ -6,7 +7,7 @@ expect.extend(toHaveNoViolations);
 
 // Fonction utilitaire pour tester l'accessibilité d'un composant
 export const checkAccessibility = async (Component: React.ComponentType) => {
-  const { container } = render(<Component />);
+  const { container } = render(React.createElement(Component));
   const results = await axe(container);
   expect(results).toHaveNoViolations();
 };
@@ -20,7 +21,7 @@ export function checkAriaAttributes(element: HTMLElement, expectedAttributes: Re
 
 // Fonction utilitaire pour vérifier la navigation au clavier
 export const checkKeyboardNavigation = (Component: React.ComponentType) => {
-  const { container } = render(<Component />);
+  const { container } = render(React.createElement(Component));
   const focusableElements = container.querySelectorAll(
     'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
   );
@@ -33,7 +34,7 @@ export const checkKeyboardNavigation = (Component: React.ComponentType) => {
 
 // Fonction utilitaire pour vérifier les contrastes de couleur
 export const checkColorContrast = (Component: React.ComponentType) => {
-  const { container } = render(<Component />);
+  const { container } = render(React.createElement(Component));
   const elements = container.querySelectorAll('*');
   
   elements.forEach((element) => {
@@ -50,7 +51,7 @@ export const checkColorContrast = (Component: React.ComponentType) => {
 };
 
 export const checkARIALabels = (Component: React.ComponentType) => {
-  const { container } = render(<Component />);
+  const { container } = render(React.createElement(Component));
   const elementsWithAria = container.querySelectorAll('[aria-label], [aria-labelledby]');
   
   elementsWithAria.forEach((element) => {
@@ -66,13 +67,13 @@ export const checkARIALabels = (Component: React.ComponentType) => {
 };
 
 export const checkFocusManagement = (Component: React.ComponentType) => {
-  const { container } = render(<Component />);
+  const { container } = render(React.createElement(Component));
   const focusableElements = container.querySelectorAll(
     'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
   );
   
   focusableElements.forEach((element) => {
-    element.focus();
+    (element as HTMLElement).focus();
     expect(document.activeElement).toBe(element);
   });
 }; 
