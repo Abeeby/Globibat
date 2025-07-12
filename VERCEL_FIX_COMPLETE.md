@@ -79,6 +79,33 @@ Le projet est maintenant dans une structure standard qui devrait être automatiq
 ## Historique des commits
 
 - `fix: move entire project to repository root` - Commit principal qui résout le problème
+- `fix: regenerate pnpm-lock.yaml to sync with package.json` - Synchronisation du lockfile
+
+## ⚠️ Mise à jour : Problème de lockfile résolu
+
+### Erreur rencontrée :
+```
+ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with "frozen-lockfile" because pnpm-lock.yaml is not up to date
+```
+
+### Solution appliquée :
+1. Supprimé et régénéré le `pnpm-lock.yaml`
+2. Le lockfile est maintenant synchronisé avec `package.json`
+3. Vercel devrait pouvoir installer les dépendances
+
+### Statut actuel :
+- ✅ Structure du projet à la racine
+- ✅ Lockfile synchronisé 
+- ✅ Fichiers de configuration ajoutés (.nvmrc, .npmrc)
+- ⏳ En attente du nouveau build Vercel
+
+## 🔧 Configuration ajoutée pour stabiliser le build
+
+### Fichiers créés :
+- **.nvmrc** : Spécifie Node.js v20
+- **.npmrc** : Configure pnpm avec `engine-strict=false` et `auto-install-peers=true`
+
+Ces fichiers aident à garantir un environnement de build cohérent sur Vercel.
 
 ---
 
