@@ -82,9 +82,16 @@ export const getWebsiteSchema = (): WithContext<WebSite> => {
     url: 'https://www.globibat.com',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://www.globibat.com/search?q={search_term_string}',
-      'query-input': 'required name=search_term_string',
-    },
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.globibat.com/search?q={search_term_string}'
+      },
+      'query-input': {
+        '@type': 'PropertyValueSpecification',
+        valueRequired: true,
+        valueName: 'search_term_string'
+      }
+    } as any,
   };
 };
 
