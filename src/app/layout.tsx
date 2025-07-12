@@ -9,7 +9,7 @@ import FloatingContact from '@/components/ui/FloatingContact';
 import AccessibilityProvider from '@/components/ui/AccessibilityProvider';
 import { ThemeProvider } from '@/lib/providers/ThemeProvider';
 
-import ErrorBoundary from '@/components/ui/ErrorBoundary';
+
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -84,20 +84,18 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning className={inter.variable}>
       <body className={inter.className}>
-        <ErrorBoundary>
-          <ThemeProvider>
-            <AccessibilityProvider>
-              <a href="#main-content" className="skip-to-main">
-                Aller au contenu principal
-              </a>
-              <Navbar />
-              <main id="main-content" className="min-h-screen">{children}</main>
-              <Footer />
-              <LiveChat />
-              <FloatingContact />
-            </AccessibilityProvider>
-          </ThemeProvider>
-        </ErrorBoundary>
+        <ThemeProvider>
+          <AccessibilityProvider>
+            <a href="#main-content" className="skip-to-main">
+              Aller au contenu principal
+            </a>
+            <Navbar />
+            <main id="main-content" className="min-h-screen">{children}</main>
+            <Footer />
+            <LiveChat />
+            <FloatingContact />
+          </AccessibilityProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
