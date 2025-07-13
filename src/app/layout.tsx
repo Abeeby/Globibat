@@ -18,9 +18,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Globibat - Entreprise générale de construction et rénovation en Suisse romande',
-  description: 'Globibat, votre partenaire de confiance pour tous vos projets de construction, rénovation, électricité, serrurerie et déménagement en Suisse romande. Devis gratuit et service de qualité.',
-  keywords: 'construction, rénovation, électricité, serrurerie, déménagement, Suisse romande, Nyon, Genève, Lausanne',
+  metadataBase: new URL('https://globibat.ch'),
+  title: 'Globibat',
+  description: 'Construction, rénovation, électricité, serrurerie, nettoyage et déménagement en Suisse romande. Devis gratuit et intervention rapide.',
+  keywords: ['construction', 'rénovation', 'électricité', 'serrurerie', 'nettoyage', 'déménagement', 'Suisse romande', 'Genève', 'Lausanne', 'Nyon'],
   authors: [{ name: 'Globibat' }],
   creator: 'Globibat',
   publisher: 'Globibat',
@@ -29,25 +30,27 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://globibat.ch'),
-  alternates: {
-    canonical: 'https://globibat.ch',
-    languages: {
-      'fr-CH': '/',
-    },
-  },
   openGraph: {
-    title: 'Globibat - Entreprise générale de construction et rénovation en Suisse romande',
-    description: 'Votre partenaire de confiance pour tous vos projets de construction, rénovation, électricité, serrurerie et déménagement en Suisse romande.',
+    type: 'website',
+    locale: 'fr_CH',
     url: 'https://globibat.ch',
     siteName: 'Globibat',
-    locale: 'fr_CH',
-    type: 'website',
+    title: 'Globibat',
+    description: 'Construction, rénovation, électricité, serrurerie, nettoyage et déménagement en Suisse romande. Devis gratuit et intervention rapide.',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Globibat',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Globibat - Construction et rénovation en Suisse romande',
-    description: 'Votre partenaire de confiance pour tous vos projets en Suisse romande.',
+    title: 'Globibat',
+    description: 'Construction, rénovation, électricité, serrurerie, nettoyage et déménagement en Suisse romande.',
+    images: ['/images/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -55,6 +58,7 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
+      'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
@@ -63,9 +67,23 @@ export const metadata: Metadata = {
     google: process.env.NEXT_PUBLIC_GSC_TOKEN || '', // Variable d'environnement pour Google Search Console
   },
   icons: {
-    icon: '/images/logo/Logo Globibat.png',
-    apple: '/images/logo/Logo Globibat.png',
+    icon: [
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+    other: [
+      {
+        rel: 'android-chrome-192x192',
+        url: '/android-chrome-192x192.png',
+      },
+      {
+        rel: 'android-chrome-512x512',
+        url: '/android-chrome-512x512.png',
+      },
+    ],
   },
+  manifest: '/site.webmanifest',
 };
 
 export const viewport = {
@@ -86,7 +104,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <AccessibilityProvider>
-            <a href="#main-content" className="skip-to-main">
+            <a 
+              href="#main-content" 
+              className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black focus:text-lg focus:font-semibold focus:no-underline focus:shadow-lg"
+            >
               Aller au contenu principal
             </a>
             <Navbar />

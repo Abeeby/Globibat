@@ -1,69 +1,75 @@
-// import { DefaultSeoProps } from 'next-seo';
-
-// Configuration SEO par défaut pour tout le site
-const SEO_CONFIG: any = {
-  titleTemplate: '%s | Globibat - Entreprise générale de construction en Suisse',
-  defaultTitle: 'Globibat - Entreprise générale de construction et rénovation en Suisse',
-  description: 'Globibat, votre partenaire de confiance pour tous vos projets de construction, rénovation, électricité, serrurerie et déménagement en Suisse. Devis gratuit et service de qualité.',
-  canonical: 'https://www.globibat.com',
+// Configuration SEO centralisée
+export const seoConfig = {
+  siteUrl: 'https://globibat.ch',
+  titleTemplate: '%s | Globibat',
+  defaultTitle: 'Globibat',
+  description: 'Construction, rénovation, électricité, serrurerie, nettoyage et déménagement en Suisse romande. Service professionnel de qualité, devis gratuit et intervention rapide.',
+  keywords: ['construction', 'rénovation', 'électricité', 'serrurerie', 'nettoyage', 'déménagement', 'Suisse romande', 'Genève', 'Lausanne', 'Nyon', 'entreprise construction', 'devis gratuit'],
+  author: 'Globibat',
+  
   openGraph: {
     type: 'website',
     locale: 'fr_CH',
-    url: 'https://www.globibat.com',
+    title: 'Globibat',
+    description: 'Construction, rénovation, électricité, serrurerie, nettoyage et déménagement en Suisse romande.',
     siteName: 'Globibat',
-    title: 'Globibat - Entreprise générale de construction et rénovation en Suisse',
-    description: 'Globibat, votre partenaire de confiance pour tous vos projets de construction, rénovation, électricité, serrurerie et déménagement en Suisse. Devis gratuit et service de qualité.',
     images: [
       {
-        url: 'https://www.globibat.com/images/og-image.jpg',
+        url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Globibat - Entreprise générale de construction',
-      },
-    ],
+        alt: 'Globibat',
+      }
+    ]
   },
+  
   twitter: {
+    cardType: 'summary_large_image',
     handle: '@globibat',
     site: '@globibat',
-    cardType: 'summary_large_image',
   },
-  additionalLinkTags: [
-    {
-      rel: 'icon',
-      href: '/favicon.ico',
+  
+  // Données structurées de base
+  structuredData: {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Globibat',
+    description: 'Entreprise générale de construction et rénovation en Suisse romande',
+    telephone: '+41215050062',
+    email: 'info@globibat.ch',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rte des Tattes d\'Oie 93',
+      addressLocality: 'Nyon',
+      postalCode: '1260',
+      addressCountry: 'CH'
     },
-    {
-      rel: 'apple-touch-icon',
-      href: '/apple-touch-icon.png',
-      sizes: '180x180',
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 46.383333,
+      longitude: 6.233333
     },
-    {
-      rel: 'manifest',
-      href: '/site.webmanifest',
-    },
-  ],
-  additionalMetaTags: [
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1',
-    },
-    {
-      name: 'keywords',
-      content: 'construction, rénovation, entreprise générale, électricité, serrurerie, déménagement, débarras, Suisse, Lausanne, Genève, travaux, dépannage, conciergerie',
-    },
-    {
-      name: 'author',
-      content: 'Globibat',
-    },
-    {
-      name: 'geo.region',
-      content: 'CH-VD',
-    },
-    {
-      name: 'geo.placename',
-      content: 'Lausanne',
-    },
-  ],
-};
-
-export default SEO_CONFIG; 
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '19:00'
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '08:00',
+        closes: '19:00'
+      }
+    ],
+    priceRange: '$$',
+    url: 'https://globibat.ch',
+    image: 'https://globibat.ch/images/logo/Logo Globibat.png',
+    sameAs: [
+      'https://www.facebook.com/globibat',
+      'https://www.linkedin.com/company/globibat',
+      'https://www.instagram.com/globibat'
+    ]
+  }
+}; 
