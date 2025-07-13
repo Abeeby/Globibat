@@ -94,20 +94,20 @@ export default function Navbar() {
             ))}
             <div className="flex items-center space-x-4">
               <a
-                href="tel:+41223000000"
+                href="tel:+41215050062"
                 className="flex items-center space-x-2 text-sm font-medium text-blue-400 hover:text-blue-300"
-                aria-label="Appeler Globibat au +41 22 300 00 00"
+                aria-label="Appeler Globibat au +41 21 505 00 62"
               >
                 <FaPhone aria-hidden="true" />
-                <span>+41 22 300 00 00</span>
+                <span>+41 21 505 00 62</span>
               </a>
               <a
-                href="mailto:info@globibat.ch"
+                href="mailto:info@globibat.com"
                 className="flex items-center space-x-2 text-sm font-medium text-blue-400 hover:text-blue-300"
-                aria-label="Envoyer un email à info@globibat.ch"
+                aria-label="Envoyer un email à info@globibat.com"
               >
                 <FaEnvelope aria-hidden="true" />
-                <span>info@globibat.ch</span>
+                <span>info@globibat.com</span>
               </a>
             </div>
           </div>
@@ -156,22 +156,22 @@ export default function Navbar() {
               ))}
               <div className="px-3 py-4 space-y-3">
                 <a
-                  href="tel:+41223000000"
+                  href="tel:+41215050062"
                   className="flex items-center space-x-2 text-base font-medium text-blue-400 hover:text-blue-300"
-                  aria-label="Appeler Globibat au +41 22 300 00 00"
+                  aria-label="Appeler Globibat au +41 21 505 00 62"
                   role="menuitem"
                 >
                   <FaPhone aria-hidden="true" />
-                  <span>+41 22 300 00 00</span>
+                  <span>+41 21 505 00 62</span>
                 </a>
                 <a
-                  href="mailto:info@globibat.ch"
+                  href="mailto:info@globibat.com"
                   className="flex items-center space-x-2 text-base font-medium text-blue-400 hover:text-blue-300"
-                  aria-label="Envoyer un email à info@globibat.ch"
+                  aria-label="Envoyer un email à info@globibat.com"
                   role="menuitem"
                 >
                   <FaEnvelope aria-hidden="true" />
-                  <span>info@globibat.ch</span>
+                  <span>info@globibat.com</span>
                 </a>
               </div>
             </div>
