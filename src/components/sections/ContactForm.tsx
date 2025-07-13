@@ -144,10 +144,10 @@ export default function ContactForm({ lang }: ContactFormProps) {
   };
   
   return (
-    <div className="bg-white rounded-lg shadow-md p-8">
+    <div className="bg-white dark:bg-slate-900 rounded-lg shadow-md p-8">
       {/* Bouton d'appel direct */}
       <div className="mb-8 flex flex-col items-center justify-center sm:flex-row sm:justify-between">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-0" id="devis">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4 sm:mb-0" id="devis">
           {isEnglish ? 'Request a Quote' : 'Demande de devis'}
         </h2>
         <a 
@@ -161,13 +161,13 @@ export default function ContactForm({ lang }: ContactFormProps) {
       
       {submitStatus === 'success' ? (
         <div className="text-center py-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 mb-4">
             <FaCheck size={24} />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
             {isEnglish ? 'Thank you for your message!' : 'Merci pour votre message !'}
           </h3>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
             {apiMessage || (isEnglish 
               ? 'We have received your request and will contact you as soon as possible.' 
               : 'Nous avons bien reçu votre demande et nous vous contacterons dans les plus brefs délais.')}
@@ -182,18 +182,18 @@ export default function ContactForm({ lang }: ContactFormProps) {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-6">
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
             {isEnglish
               ? `Fill out the form below for a quote request or call us directly at `
               : `Remplissez le formulaire ci-dessous pour une demande de devis ou appelez-nous directement au `}
-            <a href="tel:+41215050062" className="text-blue-600 font-medium">+41 21 505 00 62</a>.
+            <a href="tel:+41215050062" className="text-blue-600 dark:text-blue-400 font-medium">+41 21 505 00 62</a>.
           </p>
           
           {submitStatus === 'error' && (
-            <div className="p-4 bg-red-50 border-l-4 border-red-500 text-red-700 mb-6">
+            <div className="p-4 bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 dark:border-red-400 text-red-700 dark:text-red-300 mb-6">
               <div className="flex">
                 <div className="flex-shrink-0">
-                  <FaExclamationTriangle className="h-5 w-5 text-red-500" />
+                  <FaExclamationTriangle className="h-5 w-5 text-red-500 dark:text-red-400" />
                 </div>
                 <div className="ml-3">
                   <p className="text-sm">
@@ -208,12 +208,12 @@ export default function ContactForm({ lang }: ContactFormProps) {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 {isEnglish ? 'Full Name' : 'Nom complet'} <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaUser className="h-5 w-5 text-gray-400" />
+                  <FaUser className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                 </div>
                 <input
                   type="text"
@@ -222,21 +222,21 @@ export default function ContactForm({ lang }: ContactFormProps) {
                   value={formData.name}
                   onChange={handleChange}
                   className={`block w-full pl-10 pr-3 py-2 border ${
-                    errors.name ? 'border-red-500' : 'border-gray-300'
-                  } rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500`}
+                    errors.name ? 'border-red-500' : 'border-gray-300 dark:border-slate-600'
+                  } rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:text-gray-100`}
                   placeholder={isEnglish ? 'Your name' : 'Votre nom'}
                 />
               </div>
-              {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
+              {errors.name && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.name}</p>}
             </div>
             
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Email <span className="text-red-500">*</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaEnvelope className="h-5 w-5 text-gray-400" />
+                  <FaEnvelope className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                 </div>
                 <input
                   type="email"
@@ -245,21 +245,21 @@ export default function ContactForm({ lang }: ContactFormProps) {
                   value={formData.email}
                   onChange={handleChange}
                   className={`block w-full pl-10 pr-3 py-2 border ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
-                  } rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500`}
+                    errors.email ? 'border-red-500' : 'border-gray-300 dark:border-slate-600'
+                  } rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:text-gray-100`}
                   placeholder={isEnglish ? 'Your email' : 'Votre email'}
                 />
               </div>
-              {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
+              {errors.email && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.email}</p>}
             </div>
             
             <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 {isEnglish ? 'Phone' : 'Téléphone'}
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaPhone className="h-5 w-5 text-gray-400" />
+                  <FaPhone className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                 </div>
                 <input
                   type="tel"
@@ -268,21 +268,21 @@ export default function ContactForm({ lang }: ContactFormProps) {
                   value={formData.phone}
                   onChange={handleChange}
                   className={`block w-full pl-10 pr-3 py-2 border ${
-                    errors.phone ? 'border-red-500' : 'border-gray-300'
-                  } rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500`}
+                    errors.phone ? 'border-red-500' : 'border-gray-300 dark:border-slate-600'
+                  } rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:text-gray-100`}
                   placeholder={isEnglish ? 'Your phone number' : 'Votre numéro de téléphone'}
                 />
               </div>
-              {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone}</p>}
+              {errors.phone && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.phone}</p>}
             </div>
             
             <div>
-              <label htmlFor="address" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="address" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 {isEnglish ? 'Address' : 'Adresse'}
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaHome className="h-5 w-5 text-gray-400" />
+                  <FaHome className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                 </div>
                 <input
                   type="text"
@@ -290,7 +290,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
                   name="address"
                   value={formData.address}
                   onChange={handleChange}
-                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:text-gray-100"
                   placeholder={isEnglish ? 'Your address' : 'Votre adresse'}
                 />
               </div>
@@ -298,7 +298,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
           </div>
           
           <div>
-            <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="service" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               {isEnglish ? 'Service Requested' : 'Service souhaité'} <span className="text-red-500">*</span>
             </label>
             <select
@@ -307,8 +307,8 @@ export default function ContactForm({ lang }: ContactFormProps) {
               value={formData.service}
               onChange={handleChange}
               className={`block w-full py-2 px-3 border ${
-                errors.service ? 'border-red-500' : 'border-gray-300'
-              } rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500`}
+                errors.service ? 'border-red-500' : 'border-gray-300 dark:border-slate-600'
+              } rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:text-gray-100`}
             >
               {services.map((service) => (
                 <option key={service.value} value={service.value}>
@@ -316,16 +316,16 @@ export default function ContactForm({ lang }: ContactFormProps) {
                 </option>
               ))}
             </select>
-            {errors.service && <p className="mt-1 text-sm text-red-600">{errors.service}</p>}
+            {errors.service && <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.service}</p>}
           </div>
           
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               Message
             </label>
             <div className="relative">
               <div className="absolute top-3 left-3 flex items-start pointer-events-none">
-                <FaComments className="h-5 w-5 text-gray-400" />
+                <FaComments className="h-5 w-5 text-gray-400 dark:text-gray-500" />
               </div>
               <textarea
                 id="message"
@@ -333,7 +333,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-slate-600 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-slate-800 dark:text-gray-100"
                 placeholder={isEnglish ? 'Describe your project or request...' : 'Décrivez votre projet ou votre demande...'}
               ></textarea>
             </div>
@@ -354,7 +354,7 @@ export default function ContactForm({ lang }: ContactFormProps) {
             
             <a 
               href="tel:+41215050062" 
-              className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+              className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-600 transition-colors"
             >
               <FaPhone className="mr-2" />
               +41 21 505 00 62
