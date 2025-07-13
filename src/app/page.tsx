@@ -164,7 +164,7 @@ export default function HomePage() {
             "name": "Globibat SA",
             "description": "Entreprise générale de construction, rénovation, électricité, serrurerie et déménagement en Suisse romande",
             "url": "https://globibat.ch",
-            "telephone": "+41221234567",
+            "telephone": "+41215050062",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Rue du Stand 42",

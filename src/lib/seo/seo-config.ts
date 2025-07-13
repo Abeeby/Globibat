@@ -36,7 +36,7 @@ export const seoConfig = {
     name: 'Globibat',
     description: 'Entreprise générale de construction et rénovation en Suisse romande',
     telephone: '+41215050062',
-    email: 'info@globibat.ch',
+    email: 'info@globibat.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Rte des Tattes d\'Oie 93',

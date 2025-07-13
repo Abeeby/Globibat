@@ -350,7 +350,7 @@ export default function DemenagementPage() {
                   Demander un devis gratuit
                 </Link>
                 <Link 
-                  href="tel:+41223000000" 
+                                        href="tel:+41215050062" 
                   className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
                 >
                   Nous appeler

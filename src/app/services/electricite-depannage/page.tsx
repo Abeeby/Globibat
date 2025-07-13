@@ -274,7 +274,7 @@ export default function ElectricitePage() {
                 Demander un devis gratuit
               </Link>
               <Link 
-                href="tel:+41223000000" 
+                                      href="tel:+41215050062" 
                 className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700"
               >
                 Urgence 24/7

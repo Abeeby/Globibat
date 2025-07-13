@@ -79,7 +79,7 @@ export default function FAQPage() {
     {
       id: 'general-2',
       question: 'Comment obtenir un devis pour mes travaux ?',
-      answer: 'Pour obtenir un devis gratuit et sans engagement, vous pouvez nous contacter par téléphone au +41 22 123 45 67, par email à info@globibat.com ou via notre formulaire de contact en ligne. Après avoir recueilli les informations nécessaires sur votre projet, nous organiserons si nécessaire une visite sur place pour évaluer précisément les travaux à réaliser. Vous recevrez ensuite un devis détaillé dans les meilleurs délais.',
+      answer: 'Pour obtenir un devis gratuit et sans engagement, vous pouvez nous contacter par téléphone au +41 21 505 00 62, par email à info@globibat.com ou via notre formulaire de contact en ligne. Après avoir recueilli les informations nécessaires sur votre projet, nous organiserons si nécessaire une visite sur place pour évaluer précisément les travaux à réaliser. Vous recevrez ensuite un devis détaillé dans les meilleurs délais.',
       category: 'Questions générales',
     },
     {
@@ -151,7 +151,7 @@ export default function FAQPage() {
     {
       id: 'serrurerie-1',
       question: 'Que faire en cas de perte de clés ou de claquement de porte ?',
-      answer: 'En cas de perte de clés ou de claquement de porte, contactez immédiatement notre service d\'urgence au +41 22 123 45 68. Nos serruriers sont disponibles 24h/24 et 7j/7 pour vous dépanner. Selon la situation, nous procéderons à l\'ouverture de la porte sans endommagement si possible, ou au perçage du cylindre en dernier recours. Pour plus de sécurité, nous vous recommandons ensuite de remplacer votre serrure, surtout en cas de perte de clés.',
+      answer: 'En cas de perte de clés ou de claquement de porte, contactez immédiatement notre service d\'urgence au +41 21 505 00 62. Nos serruriers sont disponibles 24h/24 et 7j/7 pour vous dépanner. Selon la situation, nous procéderons à l\'ouverture de la porte sans endommagement si possible, ou au perçage du cylindre en dernier recours. Pour plus de sécurité, nous vous recommandons ensuite de remplacer votre serrure, surtout en cas de perte de clés.',
       category: 'Serrurerie & Dépannage',
     },
     {

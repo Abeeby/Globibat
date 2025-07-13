@@ -77,7 +77,7 @@ export default function TeamPage() {
       bio: 'Fort de plus de 20 ans d\'expérience dans le secteur de la construction, Jean a fondé Globibat en 2010 avec la vision de créer une entreprise générale capable de répondre à tous les besoins des clients. Il supervise l\'ensemble des opérations et veille à maintenir les standards de qualité élevés qui font la réputation de Globibat.',
       image: '/images/team/jean-dupont.jpg',
       email: 'jean.dupont@globibat.com',
-      phone: '+41 22 123 45 67',
+      phone: '+41 21 505 00 62',
       linkedin: 'https://www.linkedin.com/in/jean-dupont',
     },
     {
@@ -88,7 +88,7 @@ export default function TeamPage() {
       bio: 'Marie gère l\'ensemble des aspects administratifs et financiers de Globibat. Elle assure le suivi des devis, des factures et des contrats, et veille au bon fonctionnement de l\'entreprise au quotidien. Sa rigueur et son organisation sont des atouts précieux pour l\'entreprise.',
       image: '/images/team/marie-martin.jpg',
       email: 'marie.martin@globibat.com',
-      phone: '+41 22 123 45 68',
+      phone: '+41 21 505 00 62',
     },
     {
       id: 'pierre-bernard',
@@ -98,7 +98,7 @@ export default function TeamPage() {
       bio: 'Pierre supervise les chantiers de construction et de rénovation. Avec plus de 15 ans d\'expérience dans le bâtiment, il coordonne les différents corps de métier et veille au respect des délais et des budgets. Sa connaissance approfondie des techniques de construction garantit des réalisations de qualité.',
       image: '/images/team/pierre-bernard.jpg',
       email: 'pierre.bernard@globibat.com',
-      phone: '+41 22 123 45 69',
+      phone: '+41 21 505 00 62',
     },
     {
       id: 'sophie-durand',
@@ -117,7 +117,7 @@ export default function TeamPage() {
       department: 'Électricité & Dépannage',
       bio: 'Thomas dirige l\'équipe d\'électriciens de Globibat. Titulaire d\'un brevet fédéral, il supervise les installations électriques, les mises aux normes et les dépannages. Sa connaissance approfondie des normes de sécurité et des nouvelles technologies en fait un expert reconnu dans son domaine.',
       image: '/images/team/thomas-petit.jpg',
-      phone: '+41 22 123 45 70',
+      phone: '+41 21 505 00 62',
     },
     {
       id: 'lucas-moreau',
@@ -126,7 +126,7 @@ export default function TeamPage() {
       department: 'Serrurerie & Dépannage',
       bio: 'Lucas est spécialisé dans l\'installation et le dépannage de serrures et systèmes de sécurité. Disponible pour les interventions d\'urgence, il assure également la pose de portes blindées et de systèmes de contrôle d\'accès pour les particuliers et les entreprises.',
       image: '/images/team/lucas-moreau.jpg',
-      phone: '+41 22 123 45 71',
+      phone: '+41 21 505 00 62',
     },
     {
       id: 'emma-blanc',
@@ -145,7 +145,7 @@ export default function TeamPage() {
       bio: 'David supervise les équipes de nettoyage et de conciergerie. Il veille à la qualité des prestations et à la satisfaction des clients. Son expertise dans les techniques et produits de nettoyage écologiques permet à Globibat de proposer des services respectueux de l\'environnement.',
       image: '/images/team/david-noir.jpg',
       email: 'david.noir@globibat.com',
-      phone: '+41 22 123 45 72',
+      phone: '+41 21 505 00 62',
     },
   ];
   

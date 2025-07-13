@@ -102,20 +102,20 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-white">{texts.contact}</h3>
             <div className="space-y-4">
               <a 
-                href="tel:+41223000000" 
+                href="tel:+41215050062" 
                 className="flex items-center text-white hover:text-blue-300 transition-colors p-2 rounded-md hover:bg-blue-900/30 text-base font-medium focus:outline-none focus:ring-2 focus:ring-blue-400"
-                aria-label={currentLocale === 'en' ? 'Call us at +41 22 300 00 00' : 'Appelez-nous au +41 22 300 00 00'}
+                aria-label={currentLocale === 'en' ? 'Call us at +41 21 505 00 62' : 'Appelez-nous au +41 21 505 00 62'}
               >
                 <FaPhone className="h-5 w-5 mr-3 text-blue-400" aria-hidden="true" />
-                <span className="text-blue-200">+41 22 300 00 00</span>
+                <span className="text-blue-200">+41 21 505 00 62</span>
               </a>
               <a 
-                href="mailto:info@globibat.ch" 
+                href="mailto:info@globibat.com" 
                 className="flex items-center text-white hover:text-blue-300 transition-colors p-2 rounded-md hover:bg-blue-900/30 text-base font-medium focus:outline-none focus:ring-2 focus:ring-blue-400"
-                aria-label={currentLocale === 'en' ? 'Email us at info@globibat.ch' : 'Envoyez-nous un email à info@globibat.ch'}
+                aria-label={currentLocale === 'en' ? 'Email us at info@globibat.com' : 'Envoyez-nous un email à info@globibat.com'}
               >
                 <FaEnvelope className="h-5 w-5 mr-3 text-blue-400" aria-hidden="true" />
-                <span className="text-blue-200">info@globibat.ch</span>
+                <span className="text-blue-200">info@globibat.com</span>
               </a>
               <div className="flex items-start text-white p-2 rounded-md text-base font-medium">
                 <FaMapMarkerAlt className="h-5 w-5 mr-3 mt-0.5 text-blue-400" aria-hidden="true" />
