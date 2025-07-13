@@ -56,7 +56,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        scrolled ? 'bg-gray-900 dark:bg-gray-900 shadow-lg' : 'bg-gray-900/80 dark:bg-gray-900/80 backdrop-blur-sm'
       }`}
       role="navigation"
       aria-label="Navigation principale"
@@ -82,11 +82,9 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                className={`text-sm font-medium transition-colors hover:text-blue-400 ${
                   pathname === item.href
-                    ? 'text-blue-600 font-bold aria-current="page"'
-                    : scrolled
-                    ? 'text-gray-900'
+                    ? 'text-blue-400 font-bold aria-current="page"'
                     : 'text-white'
                 }`}
                 aria-current={pathname === item.href ? 'page' : undefined}
@@ -97,7 +95,7 @@ export default function Navbar() {
             <div className="flex items-center space-x-4">
               <a
                 href="tel:+41223000000"
-                className="flex items-center space-x-2 text-sm font-medium text-blue-600 hover:text-blue-700"
+                className="flex items-center space-x-2 text-sm font-medium text-blue-400 hover:text-blue-300"
                 aria-label="Appeler Globibat au +41 22 300 00 00"
               >
                 <FaPhone aria-hidden="true" />
@@ -105,7 +103,7 @@ export default function Navbar() {
               </a>
               <a
                 href="mailto:info@globibat.ch"
-                className="flex items-center space-x-2 text-sm font-medium text-blue-600 hover:text-blue-700"
+                className="flex items-center space-x-2 text-sm font-medium text-blue-400 hover:text-blue-300"
                 aria-label="Envoyer un email à info@globibat.ch"
               >
                 <FaEnvelope aria-hidden="true" />
@@ -117,7 +115,7 @@ export default function Navbar() {
           {/* Bouton menu mobile */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+            className="md:hidden p-2 rounded-md text-white hover:text-gray-300 hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
             aria-label={isOpen ? "Fermer le menu" : "Ouvrir le menu"}
@@ -137,7 +135,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white shadow-lg overflow-hidden"
+            className="md:hidden bg-gray-900 dark:bg-gray-900 shadow-lg overflow-hidden"
             role="menu"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
@@ -147,8 +145,8 @@ export default function Navbar() {
                   href={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     pathname === item.href
-                      ? 'text-blue-600 bg-blue-50'
-                      : 'text-gray-900 hover:text-blue-600 hover:bg-blue-50'
+                      ? 'text-blue-400 bg-gray-800'
+                      : 'text-white hover:text-blue-400 hover:bg-gray-800'
                   }`}
                   aria-current={pathname === item.href ? 'page' : undefined}
                   role="menuitem"
@@ -159,7 +157,7 @@ export default function Navbar() {
               <div className="px-3 py-4 space-y-3">
                 <a
                   href="tel:+41223000000"
-                  className="flex items-center space-x-2 text-base font-medium text-blue-600 hover:text-blue-700"
+                  className="flex items-center space-x-2 text-base font-medium text-blue-400 hover:text-blue-300"
                   aria-label="Appeler Globibat au +41 22 300 00 00"
                   role="menuitem"
                 >
@@ -168,7 +166,7 @@ export default function Navbar() {
                 </a>
                 <a
                   href="mailto:info@globibat.ch"
-                  className="flex items-center space-x-2 text-base font-medium text-blue-600 hover:text-blue-700"
+                  className="flex items-center space-x-2 text-base font-medium text-blue-400 hover:text-blue-300"
                   aria-label="Envoyer un email à info@globibat.ch"
                   role="menuitem"
                 >

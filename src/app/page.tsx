@@ -6,7 +6,7 @@ import SectionHeading from '../components/ui/SectionHeading';
 // import { LocalBusinessJsonLd, FAQPageJsonLd } from 'next-seo';
 
 export const metadata = {
-  title: 'Globibat - Entreprise générale de construction en Suisse romande',
+  title: 'Globibat',
   description: 'Globibat, votre partenaire pour tous vos projets de construction, rénovation, électricité, serrurerie, nettoyage et déménagement en Suisse romande.',
   keywords: 'Globibat, entreprise construction Suisse romande, rénovation, électricité, serrurerie, nettoyage, déménagement, artisans Suisse romande',
 };
@@ -276,7 +276,7 @@ export default function HomePage() {
         <div className="absolute inset-0 overflow-hidden">
           <Image 
             src="/images/hero.jpg" 
-            alt="Globibat - Entreprise générale de construction" 
+            alt="Globibat" 
             fill 
             priority
             className="object-cover"
