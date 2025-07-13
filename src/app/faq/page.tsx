@@ -23,6 +23,7 @@ interface Category {
 
 export default function FAQPage() {
   const [openQuestionId, setOpenQuestionId] = useState<string | null>(null);
+  const [activeCategory, setActiveCategory] = useState('all'); // 'all' pour toutes les catégories
 
   // Fonction pour gérer l'ouverture/fermeture des questions
   const toggleQuestion = (id: string) => {
@@ -219,111 +220,150 @@ export default function FAQPage() {
   });
 
   return (
-    <main className="flex-grow">
-      <div className="bg-gray-50 py-8">
-        <div className="container mx-auto px-4">
-          <Breadcrumb
-            items={[
-              { label: 'Accueil', href: '/' },
-              { label: 'FAQ', href: '/faq' },
-            ]}
-          />
+    <main className="container mx-auto px-4 py-8">
+      <Breadcrumb
+        items={[
+          { label: 'Accueil', href: '/' },
+          { label: 'FAQ', href: '/faq' },
+        ]}
+      />
+      
+      <div className="max-w-7xl mx-auto">
+        <SectionHeading
+          title="Foire aux questions"
+          subtitle="Réponses à vos questions les plus fréquentes"
+          centered
+        />
+        
+        <div className="mt-12 bg-white dark:bg-slate-900 rounded-lg shadow-md p-8">
+          <div className="prose prose-blue dark:prose-invert max-w-none mb-12">
+            <p className="text-lg text-gray-700 dark:text-gray-300">
+              Vous trouverez ci-dessous les réponses aux questions les plus fréquemment posées sur nos services. 
+              Si vous ne trouvez pas la réponse à votre question, n'hésitez pas à nous contacter directement.
+            </p>
+          </div>
           
-          <div className="max-w-7xl mx-auto">
-            <SectionHeading
-              title="Foire aux questions"
-              subtitle="Réponses à vos questions les plus fréquentes"
-              alignment="left"
-              className="mt-8 mb-12"
-            />
-            
-            <div className="bg-white rounded-lg shadow-md p-8 mb-16">
-              <div className="prose prose-blue max-w-none mb-12">
-                <p className="text-lg text-gray-700">
-                  Vous trouverez ci-dessous les réponses aux questions les plus fréquemment posées sur nos services. 
-                  Si vous ne trouvez pas la réponse à votre question, n'hésitez pas à nous contacter directement.
-                </p>
-              </div>
-              
-              {/* Navigation par catégorie */}
-              <div className="flex flex-wrap gap-4 mb-12">
-                {categories.map((category) => (
-                  <a 
-                    key={category.id}
-                    href={`#${category.id}`}
-                    className="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
-                  >
-                    <span className="mr-2">{category.icon}</span>
-                    <span>{category.name}</span>
-                  </a>
-                ))}
-              </div>
-              
-              {/* Questions par catégorie */}
-              <div className="space-y-12">
-                {categories.map((category) => (
-                  questionsByCategory[category.name] && questionsByCategory[category.name].length > 0 && (
-                    <div key={category.id} id={category.id} className="scroll-mt-24">
-                      <div className="flex items-center mb-6">
-                        <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
-                          {category.icon}
-                        </div>
-                        <h2 className="text-2xl font-bold text-gray-900">{category.name}</h2>
-                      </div>
-                      
-                      <div className="space-y-4">
-                        {questionsByCategory[category.name].map((question) => (
-                          <div 
-                            key={question.id} 
-                            className="border border-gray-200 rounded-lg overflow-hidden"
+          {/* Navigation par catégorie */}
+          <div className="flex flex-wrap gap-4 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`inline-flex items-center px-4 py-2 rounded-lg font-medium transition-colors ${
+                  activeCategory === category.id
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700'
+                }`}
+              >
+                {category.icon}
+                <span className="ml-2">{category.name}</span>
+              </button>
+            ))}
+          </div>
+          
+          {/* Questions et réponses */}
+          <div className="space-y-6">
+            {activeCategory === 'all' 
+              ? categories.map((category) => (
+                  <div key={category.id} className="mb-12">
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
+                      {category.icon}
+                      <span className="ml-3">{category.name}</span>
+                    </h2>
+                    <div className="space-y-4">
+                      {questionsByCategory[category.name]?.map((question) => (
+                        <div
+                          key={question.id}
+                          className="border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden"
+                        >
+                          <button
+                            onClick={() => toggleQuestion(question.id)}
+                            className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
                           >
-                            <button
-                              onClick={() => toggleQuestion(question.id)}
-                              className="w-full flex justify-between items-center p-4 text-left bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                            <h3 className="font-semibold text-gray-900 dark:text-gray-100">{question.question}</h3>
+                            <svg
+                              className={`w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform ${
+                                openQuestionId === question.id ? 'rotate-180' : ''
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
                             >
-                              <h3 className="text-lg font-medium text-gray-900">{question.question}</h3>
-                              <span className="ml-4 flex-shrink-0">
-                                {openQuestionId === question.id ? (
-                                  <FaChevronUp className="h-5 w-5 text-blue-600" />
-                                ) : (
-                                  <FaChevronDown className="h-5 w-5 text-gray-400" />
-                                )}
-                              </span>
-                            </button>
-                            
-                            {openQuestionId === question.id && (
-                              <div className="p-4 bg-gray-50 border-t border-gray-200">
-                                <p className="text-gray-700">{question.answer}</p>
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          {openQuestionId === question.id && (
+                            <div className="px-6 py-4 border-t border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800">
+                              <p className="text-gray-700 dark:text-gray-300">{question.answer}</p>
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
-                  )
-                ))}
-              </div>
-            </div>
-            
-            {/* Vous n'avez pas trouvé votre réponse ? */}
-            <div className="bg-blue-50 rounded-lg shadow-md p-8 mb-16">
-              <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Vous n'avez pas trouvé votre réponse ?</h2>
-                <p className="text-gray-600 max-w-3xl mx-auto">
-                  Notre équipe est à votre disposition pour répondre à toutes vos questions. 
-                  N'hésitez pas à nous contacter par téléphone, email ou via notre formulaire de contact.
-                </p>
-              </div>
-              
-              <div className="flex justify-center">
-                <Link 
-                  href="/contact" 
-                  className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
-                >
-                  Contactez-nous
-                </Link>
-              </div>
-            </div>
+                  </div>
+                ))
+              : (
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6 flex items-center">
+                      {categories.find(cat => cat.id === activeCategory)?.icon}
+                      <span className="ml-3">{categories.find(cat => cat.id === activeCategory)?.name}</span>
+                    </h2>
+                    <div className="space-y-4">
+                      {questionsByCategory[categories.find(cat => cat.id === activeCategory)?.name || '']?.map((question) => (
+                        <div
+                          key={question.id}
+                          className="border border-gray-200 dark:border-slate-700 rounded-lg overflow-hidden"
+                        >
+                          <button
+                            onClick={() => toggleQuestion(question.id)}
+                            className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 dark:hover:bg-slate-800 transition-colors"
+                          >
+                            <h3 className="font-semibold text-gray-900 dark:text-gray-100">{question.question}</h3>
+                            <svg
+                              className={`w-5 h-5 text-gray-500 dark:text-gray-400 transform transition-transform ${
+                                openQuestionId === question.id ? 'rotate-180' : ''
+                              }`}
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </button>
+                          {openQuestionId === question.id && (
+                            <div className="px-6 py-4 border-t border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-800">
+                              <p className="text-gray-700 dark:text-gray-300">{question.answer}</p>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )
+            }
+          </div>
+        </div>
+        
+        {/* Call to action */}
+        <div className="mt-16 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Vous ne trouvez pas la réponse à votre question ?</h2>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
+            Notre équipe est à votre disposition pour répondre à toutes vos questions spécifiques. 
+            N'hésitez pas à nous contacter pour obtenir des informations détaillées sur nos services.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+            >
+              Nous contacter
+            </Link>
+            <Link 
+              href="tel:+41215050062" 
+              className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-slate-800 hover:bg-gray-50 dark:hover:bg-slate-700"
+            >
+              Appeler maintenant
+            </Link>
           </div>
         </div>
       </div>

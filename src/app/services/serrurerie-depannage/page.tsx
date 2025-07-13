@@ -6,7 +6,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { FaLock, FaKey, FaShieldAlt, FaDoorOpen, FaHome, FaBuilding, FaCheck, FaTools } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Serrurerie & Dépannage | Globibat - Entreprise générale de construction',
+  title: 'Serrurerie & Dépannage | Globibat',
   description: 'Services de serrurerie et dépannage à Genève. Installation et réparation de serrures, ouverture de portes et interventions d\'urgence 24h/24 par des serruriers qualifiés.',
   keywords: 'serrurier Genève, dépannage serrurerie, ouverture de porte, installation serrure, urgence serrurerie, clés perdues',
 };

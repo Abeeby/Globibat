@@ -4,7 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Politique de cookies | Globibat - Entreprise générale de construction',
+  title: 'Politique de cookies | Globibat',
   description: 'Politique de cookies de Globibat. Découvrez comment nous utilisons les cookies sur notre site web pour améliorer votre expérience.',
   keywords: 'politique cookies Globibat, cookies site web, gestion cookies, confidentialité navigation',
 };

@@ -6,7 +6,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { FaBuilding, FaHome, FaTools, FaBolt, FaLock, FaBroom } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Projets réalisés | Globibat - Entreprise générale de construction',
+  title: 'Projets réalisés | Globibat',
   description: 'Découvrez les projets de construction, rénovation, électricité, serrurerie et nettoyage réalisés par Globibat en Suisse romande. Galerie de nos réalisations et témoignages clients.',
   keywords: 'projets construction Suisse romande, réalisations Globibat, rénovation appartement, installation électrique, références clients, portfolio construction',
 };

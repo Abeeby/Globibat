@@ -6,7 +6,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { FaBolt, FaLightbulb, FaShieldAlt, FaTools, FaHome, FaBuilding, FaCheck } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Électricité & Dépannage | Globibat - Entreprise générale de construction',
+  title: 'Électricité & Dépannage | Globibat',
   description: 'Services d\'électricité et dépannage à Genève. Installation électrique, mise aux normes, domotique et interventions d\'urgence 24h/24 par des électriciens qualifiés.',
   keywords: 'électricien Genève, dépannage électrique, installation électrique, mise aux normes, domotique, urgence électricité',
 };

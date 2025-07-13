@@ -6,7 +6,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { FaCheck, FaShieldAlt, FaCertificate, FaMedal, FaHandshake } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Certifications & Accréditations | Globibat - Entreprise générale de construction',
+  title: 'Certifications & Accréditations | Globibat',
   description: 'Découvrez les certifications et accréditations de Globibat, garantissant la qualité et le professionnalisme de nos services de construction, rénovation, électricité, serrurerie, déménagement et nettoyage en Suisse romande.',
   keywords: 'certifications Globibat, accréditations construction Suisse romande, entreprise certifiée, normes qualité, ISO 9001, certifications électricité, accréditations professionnelles',
 };

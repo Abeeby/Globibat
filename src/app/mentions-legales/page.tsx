@@ -3,7 +3,7 @@ import Breadcrumb from '@/components/ui/Breadcrumb';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 export const metadata = {
-  title: 'Mentions légales | Globibat - Entreprise générale de construction',
+  title: 'Mentions légales | Globibat',
   description: 'Mentions légales et conditions générales de Globibat, entreprise générale de construction à Genève.',
   keywords: 'mentions légales Globibat, conditions générales, politique de confidentialité, entreprise construction Genève',
 };
@@ -32,7 +32,7 @@ export default function LegalPage() {
               <div className="prose prose-blue max-w-none">
                 <h2>1. Informations légales</h2>
                 <p>
-                  Le site web www.globibat.com est édité par Globibat, entreprise générale de construction, 
+                  Le site web www.globibat.com est édité par Globibat, 
                   dont le siège social est situé en Suisse romande.
                 </p>
                 <p className="pl-4">

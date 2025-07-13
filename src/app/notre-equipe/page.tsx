@@ -6,7 +6,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { FaLinkedin, FaEnvelope, FaPhone, FaTools, FaBolt, FaLock, FaBuilding, FaBroom } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Notre équipe | Globibat - Entreprise générale de construction',
+  title: 'Notre équipe | Globibat',
   description: 'Découvrez l\'équipe de professionnels de Globibat à Genève. Nos experts en construction, rénovation, électricité, serrurerie, déménagement et nettoyage.',
   keywords: 'équipe Globibat, professionnels construction Genève, experts rénovation, électriciens Genève, serruriers, déménageurs, équipe nettoyage',
 };

@@ -6,7 +6,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { FaHardHat, FaHome, FaBuilding, FaPaintRoller, FaTools, FaWrench, FaCheck } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Construction & Rénovation | Globibat - Entreprise générale de construction',
+  title: 'Construction & Rénovation | Globibat',
   description: 'Services de construction et rénovation à Genève. Transformation, rénovation complète, extension, aménagement intérieur et extérieur par des professionnels qualifiés.',
   keywords: 'construction Genève, rénovation appartement, transformation maison, extension bâtiment, aménagement intérieur, rénovation salle de bain, rénovation cuisine',
 };

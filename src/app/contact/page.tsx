@@ -7,7 +7,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import ContactForm from '@/components/sections/ContactForm';
 
 export const metadata = {
-  title: 'Contact | Globibat - Entreprise générale de construction',
+  title: 'Contact | Globibat',
   description: 'Contactez Globibat pour tous vos projets de construction, rénovation, électricité, serrurerie, nettoyage ou déménagement. Devis gratuit et sans engagement.',
   keywords: 'contact Globibat, devis construction, entreprise construction Suisse romande, contact rénovation, devis électricité, devis serrurerie, devis déménagement',
 };

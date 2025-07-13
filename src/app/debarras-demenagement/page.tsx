@@ -6,7 +6,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { FaTruck, FaBoxOpen, FaTrash, FaHome, FaBuilding, FaWarehouse, FaCheck, FaRecycle, FaArrowRight } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Déménagement & Débarras | Globibat - Entreprise générale de construction',
+  title: 'Déménagement & Débarras | Globibat',
   description: 'Services de déménagement et débarras en Suisse romande. Déménagement complet, transport de meubles, débarras d\'appartements et évacuation de déchets.',
   keywords: 'déménagement Suisse romande, débarras appartement, transport meubles, évacuation déchets, déménagement entreprise, garde-meubles',
 };

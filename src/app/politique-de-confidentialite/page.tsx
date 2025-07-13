@@ -4,7 +4,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Politique de confidentialité | Globibat - Entreprise générale de construction',
+  title: 'Politique de confidentialité | Globibat',
   description: 'Politique de confidentialité de Globibat. Découvrez comment nous protégeons vos données personnelles et respectons votre vie privée.',
   keywords: 'politique confidentialité Globibat, protection données personnelles, RGPD, vie privée, données clients',
 };

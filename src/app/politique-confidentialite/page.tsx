@@ -3,7 +3,7 @@ import Breadcrumb from '@/components/ui/Breadcrumb';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 export const metadata = {
-  title: 'Politique de confidentialité | Globibat - Entreprise générale de construction',
+  title: 'Politique de confidentialité | Globibat',
   description: 'Politique de confidentialité et de protection des données personnelles de Globibat, entreprise générale de construction en Suisse romande.',
   keywords: 'politique confidentialité Globibat, protection données personnelles, RGPD, cookies, entreprise construction Suisse romande',
 };

@@ -6,7 +6,7 @@ import SectionHeading from '@/components/ui/SectionHeading';
 import { FaHardHat, FaPlug, FaKey, FaBroom, FaTruck, FaArrowRight } from 'react-icons/fa';
 
 export const metadata = {
-  title: 'Nos Services | Globibat - Entreprise générale de construction',
+  title: 'Nos Services | Globibat',
   description: 'Découvrez nos services de construction, rénovation, électricité, serrurerie, nettoyage et déménagement à Genève. Des solutions complètes pour tous vos projets.',
   keywords: 'services Genève, construction, rénovation, électricité, serrurerie, nettoyage, déménagement, entreprise générale',
 };

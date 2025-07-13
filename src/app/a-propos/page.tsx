@@ -6,7 +6,7 @@ import Breadcrumb from '@/components/ui/Breadcrumb';
 import SectionHeading from '@/components/ui/SectionHeading';
 
 export const metadata = {
-  title: 'À propos | Globibat - Entreprise générale de construction',
+  title: 'À propos | Globibat',
   description: 'Découvrez Globibat, entreprise de construction et rénovation en Suisse romande. Notre histoire, nos valeurs et notre équipe d\'experts au service de vos projets.',
   keywords: 'Globibat, entreprise construction Suisse romande, histoire Globibat, équipe construction, valeurs entreprise bâtiment, artisans qualifiés Suisse romande',
 };

@@ -5,7 +5,7 @@ import ProjectGrid from '@/components/sections/ProjectGrid';
 import type { Project } from '@/components/sections/ProjectGrid';
 
 export const metadata = {
-  title: 'Nos réalisations | Globibat - Entreprise générale de construction',
+  title: 'Nos réalisations | Globibat',
   description: 'Découvrez les projets de construction, rénovation, électricité et autres services réalisés par Globibat à Genève et environs.',
   keywords: 'réalisations Globibat, projets construction, rénovation Genève, références entreprise bâtiment, portfolio construction',
 };
